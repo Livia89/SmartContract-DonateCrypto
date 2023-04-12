@@ -84,7 +84,7 @@ contract DonateCrypto {
         // this call is to transfer values
         recipient.call{value: campaign.balance - fee}("");
 
-        plataformWidrawal(fee); 
+        plataformWidrawal(); 
 
         campaigns[id].active = false;
     }
@@ -93,13 +93,11 @@ contract DonateCrypto {
      * @function plataformWidrawal
      * @description after campaign author's withdraw , the platform fee is transfer to platform owner 
      */
-     function plataformWidrawal(uint256 fee) private payable {
+     function plataformWidrawal() private payable {
 
         address payable platformOwner = payable(
             "walletHere"
         );
-
         platformOwner.call{value: fee}("");
-
     } 
 }
