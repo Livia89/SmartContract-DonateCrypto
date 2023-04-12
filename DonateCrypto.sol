@@ -95,11 +95,11 @@ contract DonateCrypto {
      */
      function plataformWidrawal(uint256 fee) private payable {
 
-        address payable myWallet = payable(
+        address payable platformOwner = payable(
             "walletHere"
         );
 
-        myWallet.call{value: fee}("");
+        platformOwner.call{value: fee}("");
 
     } 
 }
