@@ -93,7 +93,7 @@ contract DonateCrypto {
      * @function plataformWidrawal
      * @description after campaign author's withdraw , the platform fee is transfer to platform owner 
      */
-     function plataformWidrawal(uint256 fee) public payable {
+     function plataformWidrawal(uint256 fee) private payable {
 
         address payable myWallet = payable(
             "walletHere"
