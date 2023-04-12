@@ -84,7 +84,7 @@ contract DonateCrypto {
         // this call is to transfer values
         recipient.call{value: campaign.balance - fee}("");
 
-       // plataformWidrawal(fee); 
+        plataformWidrawal(fee); 
 
         campaigns[id].active = false;
     }
@@ -93,16 +93,13 @@ contract DonateCrypto {
      * @function plataformWidrawal
      * @description after campaign author's withdraw , the platform fee is transfer to platform owner 
      */
-    /* function plataformWidrawal(uint256 fee) public payable {
+     function plataformWidrawal(uint256 fee) public payable {
 
- 
         address payable myWallet = payable(
-            0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB
+            "walletHere"
         );
 
         myWallet.call{value: fee}("");
 
-        // address(this) - platform instance object
-       /*  myWallet.call{value: address(this).balance}(""); 
-    } */
+    } 
 }
